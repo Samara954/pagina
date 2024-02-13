@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROCESADORES</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)),
+    url(https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/procesador.jpg?v=1706063711480);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0 0 0;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 50px;
+    font-weight:  800;
+    text-transform: uppercase;
+    position: relative;
+    animation: moveLogo 5s infinite linear; /* Agrega una animación de movimiento lateral infinito */
+     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Borde blanco */
+}
+
+@keyframes moveLogo {
+    0% {
+        left: 0; /* Posición inicial, sin desplazamiento lateral */
+    }
+    50% {
+        left: 20px; /* Desplazamiento hacia la derecha en la mitad de la animación */
+    }
+    100% {
+        left: 0; /* Posición final, sin desplazamiento lateral */
+    }
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content{
+    display: flex;
+}
+
+.header-txt {
+    width: 50%;
+}
+
+.header-txt h1 {
+    font-size: 100px;
+    line-height: 85px;
+    color: aliceblue;
+    margin-bottom: 40px;
+     text-shadow: 3px 3px black, -3px -3px black, 3px -3px black, -3px 3px black;
+}
+
+
+.header-txt span {
+    font-size: 75px;
+    color: aliceblue;
+}
+
+.header-img {
+    width: 50%;
+    text-align: center;
+}
+
+.header-img img {
+    width: 400px;
+    animation: swingAnimation 10s infinite ease-in-out; /* Agrega una animación de balanceo infinito */
+}
+
+@keyframes swingAnimation {
+    0%, 100% {
+        transform: rotate(0deg); /* Posición inicial y final, sin balanceo */
+    }
+    25%, 75% {
+        transform: rotate(10deg); /* Balanceo hacia un lado en el 25% y 75% de la animación */
+    }
+    50% {
+        transform: rotate(-10deg); /* Balanceo hacia el otro lado en la mitad de la animación */
+    }
+}
+
+.buttons {
+    display: flex;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 13px 20px;
+    color: white; 
+    border: 2px solid white; 
+    border-radius: 30px;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.menu-pl {
+    padding: 0 0 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.menu-pl .general-txt:hover {
+  transform: perspective(1000px) scale(1.1);
+  border: 2px solid lightcoral;
+}
+
+.menu-pl .general-txt:hover .general-txt-img {
+  transform: perspective(1000px) scale(1.1);
+}
+
+h2 {
+    font-size: 50px;
+    color: #292933;
+    margin-bottom: 40px;
+}
+
+span {
+    color: black;
+}
+
+.general-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.general-txt {
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    flex: 0 0 calc(33.33% - 35px);
+    max-width: calc(33.33% - 35px);
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about {
+    padding: 100px 0;
+    margin-bottom: 100px;
+    background-color: rgb(122, 122, 122);
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+}
+
+.about-txt {
+    width: 100%;
+    margin-right: 0.5cm;
+}
+
+.about-txt h2 {
+    color: rgb(0, 0, 0);
+}
+
+
+.about-txt p{
+    font-size: 21px;
+    color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: whitesmoke; 
+    padding: 40px 0;
+    text-align: center;
+    margin-top: -5cm; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-social {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info h5,
+.contact-info p {
+    margin: 0;
+    padding: 10px;
+    font-size: 18px; 
+    text-align: center; 
+    width: 100%; 
+}
+.col-12.mb-4 {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+}
+.btn-social {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28px;
+    margin-right: 10px; 
+    background-color: #fff; 
+    color: black; 
+    border: 2px solid black; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-social:hover {
+    background-color: #000000; 
+    color: #fff; 
+}
+
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+
+        <div class="menu container">
+            <a href="#" class="logo">PROCESADORES DE 
+                ALIMENTOS
+            </a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/procesador.jpg?v=1706063711480" class="menu-icono">
+            </label>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <br>
+                <h1>La cocina hecha <br> <span> fácil</span> </h1>
+                
+                <div class="buttons">
+                    <a href="menu.html" class="btn-1">Productos</a>
+                    <a href="carrito.html" class="btn-1">Comprar</a>
+                </div>
+            </div>
+                <div class="header-img">
+                    <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/licuadora.jpg?v=1706063712781" alt="">
+                </div>
+        </div>
+
+    </header>
+
+    <section class="menu-pl container">
+
+        <h2>Nuestros <span>Productos</span></h2>
+
+        <div class="general-content">
+
+            <div class="general-txt">
+                <div class="model-container">
+                  <model-viewer src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/modelo1.glb?v=1706059483281" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="commerce" poster="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/poster1.webp?v=1706063265168" shadow-intensity="1.91" shadow-softness="0.82" auto-rotate camera-orbit="0.3561deg 157.5deg 2.923m" field-of-view="30deg">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+     <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+</model-viewer>
+   
+              </div>
+                <h3>PROCESADORA DE ALIMENTOS</h3>
+                <p>
+                    "Procesador de alimentos. Ideal para picar, hacer puré, batir o licuar. Completamente sellado para trabajar con líquidos o alimentos secos"
+                </p>
+                <div class="prices">
+                    <span>$1,500.00 MXN</span>
+                </div>
+              <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/qr_modelo1.png?v=1706207148894">
+            </div>
+
+            <div class="general-txt">
+                <div>
+                  <model-viewer src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/modelo2.glb?v=1706063197951" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/poster2.webp?v=1706063198437" shadow-intensity="1" auto-rotate>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+    </div>
+</model-viewer>
+
+              </div>
+                <h3>CORTADORA PROFESIONAL DE VERDURAS</h3>
+                <p>
+                    "La KSM 100 es una cortadora para procesar pequeñas cantidades de verduras, lechugas y frutas más duras. La gran puerta de la caja de cuchillas y las 2 aberturas de llenado diferentes garantizan una amplia gama de aplicaciones"
+                </p>
+                <div class="prices">
+                    <span>$8,000.00 MXN</span>
+                </div>
+              <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/qr_modelo2.png?v=1706207149111">
+            </div>
+
+            <div class="general-txt">
+              <div>
+                <model-viewer src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/modelo3.glb?v=1706063489616" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="commerce" poster="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/modelo3.glb?v=1706063489616" shadow-intensity="1" auto-rotate camera-orbit="76.56deg 115.1deg 2.704m" field-of-view="30deg">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+    </div>
+</model-viewer>
+
+              </div>
+                <h3>LICUADORA PROFESIONAL</h3>
+                <p>
+                    "El sistema de cocina Auto-iQ proporciona rendimiento y potencia profesionales. El sistema de cocina compacto Ninja con Auto-iQ proporciona rendimiento y potencia profesionales."
+                </p>
+                <div class="prices">
+                    <span>$3,5000.00 MXN</span>
+                </div>
+              <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/qr_modelo3.png?v=1706207147870">
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content container">
+            <div class="about-txt">
+                <h2>PROCESADORES <br><span style="color: black;">DE ALIMENTOS?</span></h2>
+                <p>
+                    "Un procesador de alimentos es un electrodoméstico que se utiliza para cortar,
+                     triturar, batir, mezclar y amasar alimentos. Es una herramienta muy versátil
+                      que puede utilizarse para preparar una amplia variedad de platos, desde salsas
+                       y sopas hasta postres y aperitivos."
+                </p>
+            </div>
+    
+            <div class="about-img">
+                <img src="https://cdn.glitch.global/fa65af7c-32f2-4615-893a-5a9cf4c54001/alimentos.jpg?v=1706063712334" alt="" width="550" height="550">
+            </div>
+        </div>
+    </section> 
+
+    <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
+        <div class="container text-center py-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <a href="index.html" class="navbar-brand m-0">
+                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">"Procesadores de Alimentos"</span></h1>
+                    </a>
+                </div>
+                <div class="col-12 mb-4">
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-social" href=" ">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>                
+
+    <div class="contact-info">
+        <div class="contact">
+            <h5 class="font-weight-bold mb-2">Ponerse en contacto</h5>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</body>
+</html>
